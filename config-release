@@ -1,0 +1,34 @@
+name                          : nodejsenterprise-cms
+version                       : 0.5.1
+
+default-ip                    : 0.0.0.0
+default-port                  : 80
+
+// session cookie name, expiration in hours
+session-cookie-name           : __user
+session-cookie-secure         : false  
+session-cookie-httpOnly       : true
+session-cookie-expires        : 24
+
+// auth settings - default datasource is MongoDataSource
+// auth-datasource               : JsonFileDataSource
+// auth-datasource-filePath      : ./databases/users.json
+// auth-datasource-database      : cms
+
+auth-datasource-collection    : users
+auth-mailer-use               : mailer-primary
+auth-mailer-subject           : Password changed
+auth-mailer-forgotpass        : emails/forgotpass
+
+// main datasource setings (if database missing app name will be used)
+datasource-primary-host       : localhost
+// datasource-primary-database   : cms
+
+// primary mailer conf
+mailer-primary-from           : your@email.com
+mailer-primary-name           : Demo
+mailer-primary-host           : smtp.gmail.com
+mailer-primary-port           : 465
+mailer-primary-secure         : true
+mailer-primary-user           : your@email.com
+mailer-primary-password       : supersecretpassword

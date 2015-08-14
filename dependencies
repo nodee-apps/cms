@@ -1,0 +1,3 @@
+package     :   http://packages.totaljs.com/enterprise/latest/enterprise-total.package
+package     :   http://packages.totaljs.com/enterprise/latest/enterprise-admin.package
+package     :   http://packages.totaljs.com/enterprise/latest/enterprise-cms.package

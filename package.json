@@ -1,0 +1,21 @@
+{
+  "name": "enterprise-cms",
+  "preferGlobal": false,
+  "version": "0.5.1",
+  "author": "NODEJS ENTERPRISE CMS - Matus Szabo <matthew@nodejsenterprise.com>",
+  "description": "cms - content management system",
+  "dependencies":{
+    "total.js":"beta",
+    "uglify-js":"*",
+    "enterprise-utils":"*",
+    "enterprise-model":"*",
+    "enterprise-view":"*"
+  },
+  "analyze": false,
+  "devDependencies": { },
+  "bundledDependencies":[],  
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.11"
+  }
+}
