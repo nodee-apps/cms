@@ -1,3 +1,3 @@
-package     :   http://packages.totaljs.com/enterprise/latest/enterprise-total.package
-package     :   http://packages.totaljs.com/enterprise/latest/enterprise-admin.package
-package     :   http://packages.totaljs.com/enterprise/latest/enterprise-cms.package
+package     :   https://cdn.rawgit.com/nodejs-enterprise/packages/master/enterprise-total.package
+package     :   https://cdn.rawgit.com/nodejs-enterprise/packages/master/enterprise-admin.package
+package     :   https://cdn.rawgit.com/nodejs-enterprise/packages/master/enterprise-cms.package
