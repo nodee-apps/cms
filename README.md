@@ -14,7 +14,7 @@ cd inside folder, than "npm install" to download modules
 ```
 
 ```
-run with "node debug.js" ,or "node delease.js"
+run with "node debug.js" ,or "node release.js"
 ```
 
 ## Requirements
@@ -25,7 +25,8 @@ run with "node debug.js" ,or "node delease.js"
 1. goto http://localhost:8080/admin
 2. click "sign up" and enter admin email/pass - this will create first admin user
 3. log in
-4. enjoy, we will publish documentation in few weeks
+4. check config-debug, config-release to setup mailer, or app name (it is used as database name, if there is no database specified)
+5. enjoy, we will publish documentation in next few weeks
 
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: license.txt
