@@ -24,7 +24,7 @@
 
 # Enterprise CMS – the Concept
 
-This CMS was born to handle almost any data viewing and the editing scenario. Yes, many good content management systems can do this, but it often means developing new plugins, data structures, types of data editors in the administration area, etc… So, here comes new CMS concept, build with modern technologies for modern websites.
+NodeJS Enterprise CMS was born to handle almost any data viewing and the editing scenario. Yes, many good content management systems can do this, but it often means developing new plugins, data structures, types of data editors in the administration area, etc… So, here comes new CMS concept, build with modern technologies for modern websites.
 
 ## Always see what you are editing
 Editing content has to be easy for all content managers. Therefore, onsite (or inline) editing is like a must. We don’t want to go to content pages lists or menu settings forms located somewhere in the admin area, dedicated from the page design. We want to see changes immediately.
