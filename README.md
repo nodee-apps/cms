@@ -5,21 +5,11 @@
 
 ## Installation
 
-```
-install and run mongodb
-```
+1. install and run mongodb
+2. download, unzip cms
+3. cd inside folder, then "npm install" to download modules
+4. run cms with "node debug.js" ,or "node release.js"
 
-```
-download, unzip cms
-```
-
-```
-cd inside folder, then "npm install" to download modules
-```
-
-```
-run cms with "node debug.js" ,or "node release.js"
-```
 
 ## Requirements
 - nodejs >= 0.11
