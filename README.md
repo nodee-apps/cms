@@ -24,7 +24,7 @@
 
 # Enterprise CMS – the Concept
 
-TE CMS was born to handle almost any data viewing and the editing scenario. Yes, many good content management systems can do this, but it often means developing new plugins, data structures, types of data editors in the administration area, etc… So, here comes new TE CMS concept, build with modern technologies for modern websites.
+This CMS was born to handle almost any data viewing and the editing scenario. Yes, many good content management systems can do this, but it often means developing new plugins, data structures, types of data editors in the administration area, etc… So, here comes new CMS concept, build with modern technologies for modern websites.
 
 ## Always see what you are editing
 Editing content has to be easy for all content managers. Therefore, onsite (or inline) editing is like a must. We don’t want to go to content pages lists or menu settings forms located somewhere in the admin area, dedicated from the page design. We want to see changes immediately.
@@ -56,7 +56,7 @@ Of course, API is very useful when we need to migrate content, run some schedule
 Forms are something like simple data models. Instead of generating HTML forms, they are publishing API, which can be used as rest endpoint when calling from AJAX (e.g. POST JSON /cmsforms/formId), in old fashioned HTML form way with query parameters or hidden inputs, or from internal API as CmsForm model. If you want pair multiple forms data on some key, just decide which property will be pairing key. You can ask visitors questions in multiple steps, or later, and send different emails. Sending emails can be triggered when some form property is defined or updated, etc…
 
 ## Customize anything – thanks to total.js
-Total.js is full-featured, well designed, and very fast. You can extend or replace anything: serving static files, generating e-tags, authentication, authorization, controller behaviors, etc… It brings nice modularity approach. You can use modules, or whole packages to extend cms functionality.
+Total.js is full-featured, well designed, and very fast nodejs framework. You can extend or replace anything: serving static files, generating e-tags, authentication, authorization, controller behaviors, etc… It brings nice modularity approach. You can use modules, or whole packages to extend cms functionality.
 
 ## Enterprise
 NodeJS is a serious platform. It really can replace some technologies used today. So, why stop with something like basic cms. Let’s make something enterprise.
