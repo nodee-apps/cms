@@ -6,20 +6,24 @@
 ## Installation
 
 ```
-download, unzip
+install and run mongodb
 ```
 
 ```
-cd inside folder, than "npm install" to download modules
+download, unzip cms
 ```
 
 ```
-run with "node debug.js" ,or "node release.js"
+cd inside folder, then "npm install" to download modules
+```
+
+```
+run cms with "node debug.js" ,or "node release.js"
 ```
 
 ## Requirements
 - nodejs >= 0.11
-- running mongodb >= 2
+- running mongodb > 2
 
 ## Next Steps
 1. goto http://localhost:8080/admin
