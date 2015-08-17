@@ -30,14 +30,14 @@ TE CMS was born to handle almost any data viewing and the editing scenario. Yes,
 Editing content has to be easy for all content managers. Therefore, onsite (or inline) editing is like a must. We don’t want to go to content pages lists or menu settings forms located somewhere in the admin area, dedicated from the page design. We want to see changes immediately.
 
 ## Widgets everywhere
-Every template is a widget. Some are used like layouts, some like pages, but can be reused like widgets. If inside template HTML is defined widgets container like <div e-container=”container_name”>, widgets can be added by content managers. Or using <widget template=”widget_template”> as fixed page partials. Every widget can have attributes. Attributes represent widget settings and can be edited by content managers.
+Every template is a widget. Some are used like layouts, some like pages, but can be reused like widgets. If inside template HTML is defined widgets container like `<div e-container=”container_name”>`, widgets can be added by content managers. Or using `<widget template=”widget_template”>` as fixed page partials. Every widget can have attributes. Attributes represent widget settings and can be edited by content managers.
 
 ## Templates – “2-way data binding”
 Same way as data are rendered, they are parsed and stored. Entire flow has 3 steps: render HTML --> manipulate HTML by content manager (send it back) --> parse, extract data and store in database.
 1.    Rendering - Let’s take a look at rendering closer (controller --> mapping --> html):
 -    Widget (or template) controller – can manipulate model (model is by default CmsDocument), or directly send response
 -    Data mapping – easy mapping via CSS selectors defines how data have to be rendered or injected to HTML template
--    HTML template – plain html, only very few special html tag are used (e.g. <layout …>, <widget … >) 
+-    HTML template – plain html, only very few special html tag are used (e.g. layout, widget, ...) 
 
 2.    Editing content: ok, now we have rendered HTML page. So we can go to the content administration area and apply all widget editors on this HTML. As a result, we can change texts, images, lists, etc… Editors are defined by CSS selectors, and, of course, can be extended.
 
