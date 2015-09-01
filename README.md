@@ -5,10 +5,11 @@
 
 ## Installation
 
-1. install and run mongodb
-2. download, unzip cms
-3. cd inside folder, then "npm install" to download modules
-4. run cms with "node debug.js" ,or "node release.js"
+1. install and run [mongodb](https://www.mongodb.org/downloads)
+2. install graphicsmagick `brew install ghostscript` and `brew install graphicsmagick`, or [graphicsmagick on windows](ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/windows/) 
+3. download, unzip cms
+4. cd inside folder, then `npm install` to download modules
+5. run cms with `node debug.js` ,or `node release.js`
 
 
 ## Requirements
