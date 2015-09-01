@@ -1,0 +1,31 @@
+{
+    "baseProp": "layouts_default",
+    "name": "",
+    "icon": "",
+    "description": "",
+    "attributes": [],
+    "view": {
+        "h2": {
+            "html": "content.headline"
+        },
+        ".menu-item": {
+            "repeat": "menuItems",
+            "inside": {
+                "a": {
+                    "html": "title",
+                    "attrs": {
+                        "href": "url"
+                    }
+                }
+            }
+        }
+    },
+    "editors": {
+        "h2": {
+            "text": {
+                "placeholder": "your text here"
+            }
+        }
+    },
+    "parse": ""
+}

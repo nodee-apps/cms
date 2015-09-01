@@ -1,0 +1,20 @@
+{
+    "baseProp": "pages_test",
+    "name": "Test Page",
+    "icon": "fa-file-text",
+    "description": "",
+    "attributes": [
+        {
+            "propName": "showInMenu",
+            "listProp": "",
+            "editor": "checkbox",
+            "settings": {
+                "value": false
+            },
+            "name": "Show in menu"
+        }
+    ],
+    "view": {},
+    "editors": {},
+    "parse": ""
+}

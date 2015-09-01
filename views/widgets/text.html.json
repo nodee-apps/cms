@@ -1,0 +1,23 @@
+{
+    "baseProp": "text",
+    "name": "Rich Text",
+    "icon": "fa-pencil",
+    "description": "",
+    "attributes": [],
+    "view": {
+        "div": {
+            "html": "content.{text}"
+        }
+    },
+    "editors": {
+        "div": {
+            "richtext": {
+                "wysiwyg": true,
+                "markdown": true,
+                "html": true,
+                "defaultMode": ""
+            }
+        }
+    },
+    "parse": ""
+}

@@ -1,0 +1,29 @@
+{
+    "baseProp": "image",
+    "name": "Image",
+    "icon": "fa-image",
+    "description": "",
+    "attributes": [],
+    "view": {
+        "img": {
+            "attrs": {
+                "src": "content.{image}"
+            }
+        }
+    },
+    "editors": {
+        "img": {
+            "image": {
+                "width": 0,
+                "widthAuto": false,
+                "height": 0,
+                "heightAuto": false,
+                "crop": false,
+                "bg_color": "",
+                "attr": "src",
+                "valueAsId": false
+            }
+        }
+    },
+    "parse": ""
+}
