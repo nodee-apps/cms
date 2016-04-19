@@ -5,7 +5,7 @@
   "author": "NODEJS ENTERPRISE CMS - Matus Szabo <matthew@nodejsenterprise.com>",
   "description": "cms - content management system",
   "dependencies":{
-    "total.js":"beta",
+    "total.js":"*",
     "uglify-js":"*",
     "enterprise-utils":"*",
     "enterprise-model":"*",
