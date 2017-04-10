@@ -32,5 +32,8 @@ tmp
 # databases folder
 databases
 
-# komodo project
-*.komodoproject
+# vscode project
+.vscode/*
+
+# downloaded packages
+packages

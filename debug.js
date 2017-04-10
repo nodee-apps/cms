@@ -1,55 +1,72 @@
-// ===================================================
-// IMPORTANT: only for development
-// total.js - web application framework for node.js
-// http://www.totaljs.com
-// ===================================================
+var packages = [
+   'nodee-total',
+   'nodee-admin',
+   'nodee-cms'
+];
 
-var fs = require('fs');
-var options = {};
-
-// options.ip = '127.0.0.1';
-// options.port = parseInt(process.argv[2]);
-// options.port = 80;
-// options.config = { name: 'total.js' };
-// options.https = { key: fs.readFileSync('keys/agent2-key.pem'), cert: fs.readFileSync('keys/agent2-cert.pem')};
-
-/**
- * Release notes:
+/*
+ * Debug configs
  */
 
-// init total.js
-require("total.js");
+var childProcessDebuggerPort = 5859,
+    watchDirectories = [ '/controllers', '/definitions', '/modules', '/resources', '/components', '/models', '/source' ],
+    watchExtensions = ['.js', '.resource', '.html'],
+    watchFiles = ['config', 'config-debug', 'config-release', 'versions'];
 
 /*
  * DEBUG setup:
  */
-var isDebugging = process.argv[process.argv.length - 1] === "debugging";
+var isDebugging = process.argv[process.argv.length - 1] === 'debugging';
 var directory = process.cwd();
-var path = require("path");
+var path = require('path');
+var fs = require('fs');
+
+// download all packages and start app
+if(!isDebugging) require('./packages.js').downloadPackages(packages, function(){
+    require('total.js'); // init total.js
+    run(); // run app in debug mode with file watchers
+    console.warn('DOWNLOADING');
+});
+else {
+    require('total.js'); // init total.js
+    run(); // run app in debug mode with file watchers
+}
 
 function debug() {
-    var framework = require("total.js");
+    var options = {};
+    var framework = require('total.js');
     var port = parseInt(process.argv[2]);
-    if (options.https) return framework.https("debug", options);
-    framework.http("debug", options);
+    if (options.https) return framework.https('debug', options);
+    framework.http('debug', options);
 }
 
 function app() {
-    var fork = require("child_process").fork;
-    var directories = [directory + "/controllers", directory + "/definitions", directory + "/modules", directory + "/resources", directory + "/components", directory + "/models", directory + "/source"];
+    var fork = require('child_process').fork;
+    var directories = [];
     var files = {};
     var force = false;
     var changes = [];
     var app = null;
     var status = 0;
     var async = new utils.Async;
-    var pid = "";
+    var pid = '';
     var pidInterval = null;
-    var prefix = "------------> ";
+    var prefix = '------------> ';
     var isLoaded = false;
 
+    for(var i=0;i<watchDirectories.length;i++){
+        directories.push( directory + watchDirectories[i] );
+    }
+
     function onFilter(path, isDirectory) {
-        return isDirectory ? true : path.indexOf(".js") !== -1 || path.indexOf(".resource") !== -1
+        return isDirectory || isWatchedFile(path);
+    }
+
+    function isWatchedFile(path){
+        for(var i=0;i<watchExtensions.length;i++){
+            if(path.indexOf(watchExtensions[i]) !== -1) return true;
+        }
+        return false;
     }
 
     function onComplete() {
@@ -58,7 +75,7 @@ function app() {
             var length = arr.length;
             for (var i = 0; i < length; i++) {
                 var name = arr[i];
-                if (name === "config" || name === "config-debug" || name === "config-release" || name === "versions" || name.indexOf(".js") !== -1 || name.indexOf(".resource") !== -1) self.file.push(name)
+                if (watchFiles.indexOf(name) !== -1 || isWatchedFile(name)) self.file.push(name)
             }
             length = self.file.length;
             for (var i = 0; i < length; i++) {
@@ -112,33 +129,39 @@ function app() {
     }
 
     function restart() {
-        if (app !== null) {
-            try {
-                process.kill(app.pid)
-            } catch (err) {}
-            app = null
+        if(!app) return start();
+
+        try {
+            app.on('exit', start);
+            process.kill(app.pid);
         }
+        catch(err){}
+    }
+    function start(){
         var arr = process.argv;
         arr.pop();
-        arr.push("debugging");
-        app = fork(path.join(directory, "debug.js"), arr);
-        app.on("message", function(msg) {
-            if (msg.substring(0, 5) === "name:") {
-                process.title = "debug: " + msg.substring(6);
-                return
+        arr.push('debugging');
+        if(childProcessDebuggerPort) app = fork(path.join(directory, 'debug.js'), arr, {execArgv: ['--debug='+childProcessDebuggerPort]});
+        else app = fork(path.join(directory, 'debug.js'), arr);
+
+        app.on('message', function(msg) {
+            if (msg.substring(0, 5) === 'name:') {
+                process.title = 'debug: ' + msg.substring(6);
+                return;
             }
-            if (msg === "eaddrinuse") process.exit(1)
+            if (msg === 'eaddrinuse') process.exit(1);
         });
-        app.on("exit", function() {
+        app.on('exit', function(){
             if (status !== 255) return;
-            app = null
+            app = null;
         });
-        if (status === 0) app.send("debugging");
-        status = 1
+        if (status === 0) app.send('debugging');
+        status = 1;
     }
-    process.on("SIGTERM", end);
-    process.on("SIGINT", end);
-    process.on("exit", end);
+
+    process.on('SIGTERM', end);
+    process.on('SIGINT', end);
+    process.on('exit', end);
 
     function end() {
         if (arguments.callee.isEnd) return;
@@ -155,35 +178,26 @@ function app() {
 
     function noop() {}
     if (process.pid > 0) {
-        console.log(prefix + "PID: " + process.pid);
-        pid = path.join(directory, "debug.pid");
+        console.log(prefix + 'PID: ' + process.pid);
+        pid = path.join(directory, 'debug.pid');
         fs.writeFileSync(pid, process.pid);
         pidInterval = setInterval(function() {
             fs.exists(pid, function(exist) {
                 if (exist) return;
                 fs.unlink(pid, noop);
                 if (app !== null) process.kill(app.pid);
-                process.exit(0)
+                process.exit(0);
             })
-        }, 2e3)
+        }, 2e3);
     }
     restart();
-    refresh_directory()
+    refresh_directory();
 }
 
-function run() {
-    if (isDebugging) {
-        debug();
-        return
-    }
-    var filename = path.join(directory, "debug.pid");
-    if (!fs.existsSync(filename)) {
-        app();
-        return
-    }
+function run(){
+    if(isDebugging) return debug();
+    var filename = path.join(directory, 'debug.pid');
+    if(!fs.existsSync(filename)) return app();
     fs.unlinkSync(filename);
-    setTimeout(function() {
-        app()
-    }, 3e3)
+    setTimeout(app, 3e3);
 }
-run();

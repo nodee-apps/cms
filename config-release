@@ -1,28 +1,30 @@
-name                          : nodejsenterprise-cms
-version                       : 0.5.2
+name                          : nodee-cms
+version                       : 1.0.0
 
-default-ip                    : 0.0.0.0
-default-port                  : 80
+default-ip                    : 127.0.0.1
+default-port                  : 8080
+
+// static files max-age set to 2 minutes
+default-response-maxage       : 120
 
 // session cookie name, expiration in hours
 session-cookie-name           : __user
-session-cookie-secure         : false  
+session-cookie-secure         : true  
 session-cookie-httpOnly       : true
 session-cookie-expires        : 24
 
-// auth settings - default datasource is MongoDataSource
-// auth-datasource               : JsonFileDataSource
-// auth-datasource-filePath      : ./databases/users.json
-// auth-datasource-database      : cms
-
+// auth settings
+// auth-datasource-database      : nodee-cms-db
 auth-datasource-collection    : users
 auth-mailer-use               : mailer-primary
 auth-mailer-subject           : Password changed
 auth-mailer-forgotpass        : emails/forgotpass
 
 // main datasource setings (if database missing app name will be used)
-datasource-primary-host       : localhost
-// datasource-primary-database   : cms
+// datasource-primary-host       : localhost
+// datasource-primary-database   : nodee-cms-db
+// datasource-primary-username   : dbuser
+// datasource-primary-password   : dbpass
 
 // primary mailer conf
 mailer-primary-from           : your@email.com
@@ -32,3 +34,6 @@ mailer-primary-port           : 465
 mailer-primary-secure         : true
 mailer-primary-user           : your@email.com
 mailer-primary-password       : supersecretpassword
+
+// admin base path, "/admin/" by default 
+admin-base-path               : /cmsadmin

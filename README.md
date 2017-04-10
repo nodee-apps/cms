@@ -1,7 +1,7 @@
 
 ![MIT License][license-image]
 
-# Full-featured nodejs CMS (beta)
+# Full-featured nodejs CMS
 
 ## Installation
 
@@ -13,19 +13,19 @@
 
 
 ## Requirements
-- nodejs >= 0.11
+- nodejs >= 4.0.0
 - running mongodb > 2
 
 ## Next Steps
-1. goto http://localhost:8080/admin
+1. goto http://localhost:8080/cmsadmin
 2. click "sign up" and enter admin email/pass - this will create first admin user
 3. log in
 4. check config-debug, config-release to setup mailer, or app name (it is used as database name, if there is no database specified)
 5. enjoy, we will publish documentation in next few weeks
 
-# Enterprise CMS – the Concept
+# Nodee CMS – the Concept
 
-NodeJS Enterprise CMS was born to handle almost any data viewing and the editing scenario. Yes, many good content management systems can do this, but it often means developing new plugins, data structures, types of data editors in the administration area, etc… So, here comes new CMS concept, build with modern technologies for modern websites.
+Nodee CMS was born to handle almost any data viewing and the editing scenario. Yes, many good content management systems can do this, but it often means developing new plugins, data structures, types of data editors in the administration area, etc… So, here comes new CMS concept, build with modern technologies for modern websites.
 
 ## Always see what you are editing
 Editing content has to be easy for all content managers. Therefore, onsite (or inline) editing is like a must. We don’t want to go to content pages lists or menu settings forms located somewhere in the admin area, dedicated from the page design. We want to see changes immediately.
@@ -59,8 +59,8 @@ Forms are something like simple data models. Instead of generating HTML forms, t
 ## Customize anything – thanks to total.js
 Total.js is full-featured, well designed, and very fast nodejs framework. You can extend or replace anything: serving static files, generating e-tags, authentication, authorization, controller behaviors, etc… It brings nice modularity approach. You can use modules, or whole packages to extend cms functionality.
 
-## Enterprise
-NodeJS is a serious platform. It really can replace some technologies used today. So, why stop with something like basic cms. Let’s make something enterprise.
+## Business ready
+NodeJS is a serious platform. It really can replace some technologies used today. So, why stop with something like basic cms. Let’s make something ready for real business needs.
 Planned features:
 -    Content editors roles, permissions, and workflow
 -    Content versioning
