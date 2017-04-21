@@ -21,7 +21,7 @@
 2. click "sign up" and enter admin email/pass - this will create first admin user
 3. log in
 4. check config-debug, config-release to setup mailer, or app name (it is used as database name, if there is no database specified)
-5. enjoy, we will publish documentation in next few weeks
+5. enjoy + check website [nodee.io](https://nodee.io) for more information and documentation
 
 # Nodee CMS – the Concept
 
