@@ -1,5 +1,5 @@
 /*DEFAULT DEPENDENCIES*/
-var Model = require('enterprise-model'),Document = Model('CmsDocument');
+var Model = require('nodee-model'),Document = Model('CmsDocument');
 module.exports.controller = function(document, done){
 /*CONTROLLER*//*
  * available variables:

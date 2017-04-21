@@ -9,7 +9,7 @@
 2. install graphicsmagick `brew install ghostscript` and `brew install graphicsmagick`, or [graphicsmagick on windows](http://www.graphicsmagick.org/download.html#download-sites) 
 3. download, unzip cms
 4. cd inside folder, then `npm install` to download modules
-5. run cms with `node debug.js` ,or `node release.js`
+5. run cms with `node debug.js` ,or `node release.js` in production
 
 
 ## Requirements
