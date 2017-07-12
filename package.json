@@ -1,12 +1,12 @@
 {
   "name": "nodee-cms",
   "preferGlobal": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "NODEE CMS - Matus Szabo <matus@nodee.io>",
   "description": "cms - content management system",
   "dependencies":{
-    "total.js":"~2.1.0",
-    "uglify-js":"*",
+    "total.js":"~2.7.0",
+    "uglify-js":"~3.0.24",
     "nodee-utils":"*",
     "nodee-model":"*",
     "nodee-view":"*"
