@@ -23,6 +23,8 @@
 4. check config-debug, config-release to setup mailer, or app name (it is used as database name, if there is no database specified)
 5. enjoy + check website [nodee.io](https://nodee.io) for more information and documentation
 
+![nodee CMS concept](https://nodee.io/images/page1_jpg.jpg)
+
 # Nodee CMS – the Concept
 
 Nodee CMS was born to handle almost any data viewing and the editing scenario. Yes, many good content management systems can do this, but it often means developing new plugins, data structures, types of data editors in the administration area, etc… So, here comes new CMS concept, build with modern technologies for modern websites.
