@@ -25,6 +25,8 @@
 
 ![nodee CMS concept](https://nodee.io/images/page1_jpg.jpg)
 
+[Learn more here](https://nodee.io/docs/cms/concept)
+
 # Nodee CMS – the Concept
 
 Nodee CMS was born to handle almost any data viewing and the editing scenario. Yes, many good content management systems can do this, but it often means developing new plugins, data structures, types of data editors in the administration area, etc… So, here comes new CMS concept, build with modern technologies for modern websites.
